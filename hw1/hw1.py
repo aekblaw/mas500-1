@@ -18,7 +18,8 @@ def apiCall():
 	bees_2013 = mc.sentenceCount('( bee OR bees)', solr_filter=[mc.publish_date_query( datetime.date( 2013, 1, 1), datetime.date( 2014, 1, 1) ), 'media_sets_id:1' ])
 	bees_2014 = mc.sentenceCount('( bee OR bees)', solr_filter=[mc.publish_date_query( datetime.date( 2014, 1, 1), datetime.date( 2015, 1, 1) ), 'media_sets_id:1' ])
 	
-	logger.debug('results queried, bees_2103: %s and bees_2014: %s', bees_2013['count'],  bees_2014['count'])
+	print ('results queried, bees_2103: %s and bees_2014: %s', bees_2013['count'],  bees_2014['count'])
+	logger.debug('results queried, bees_2103: %s and bees_2014: %s'%( bees_2013['count'],  bees_2014['count']))
 
 	return (bees_2013, bees_2014)
 
